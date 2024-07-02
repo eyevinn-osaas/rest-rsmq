@@ -19,7 +19,8 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 
   RSMQ = require("rsmq");
 
-  rsmq = new RSMQ();
+  var redisUrl = new URL(process.env.REDIS_URL || 'redis://127.0.0.1:6379');
+  rsmq = new RSMQ({ host: redisUrl.hostname, port: redisUrl.port });
 
   express = require('express');
 

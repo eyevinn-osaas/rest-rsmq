@@ -2,7 +2,7 @@
 (function() {
   var PORT, app, server;
 
-  PORT = 8101;
+  PORT = process.env.PORT || 8101;
 
   app = require("./app");
 
